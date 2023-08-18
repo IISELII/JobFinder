@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #294E54;
+    color: #F0F0F2; /* Couleur des textes */
+}
+
+
+header {
+    background-color: #00747d;
+    padding: 20px;
+    text-align: center;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+}
+
+/* Couleur des liens */
+a {
+    color: #ffffff;  /* Couleur des textes */
+    text-decoration: none; /* Supprimer le soulignement des liens */
+}
+
+a:hover {
+    text-decoration: underline; /* Souligner les liens lors du survol pour une meilleure UX */
+}
+
+
+section {
+    margin: 20px;
+}
