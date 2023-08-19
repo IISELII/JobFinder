@@ -50,18 +50,10 @@ nav a:hover {
   padding: 0; /* Espacement intérieur pour le contenu */
 }
 
-/* Styles spécifiques pour chaque section si vous le souhaitez, par exemple: */
+
 #section1 {
   min-height: 50vh; /* 2/4 de la hauteur de l'écran */
   background-color: #E6E6FA80;
-}
-
-#section2 {
-  background-color: #F8F8FF;
-}
-
-#section3 {
-  background-color: #bbb;
 }
 
 .content-wrapper {
@@ -138,20 +130,29 @@ nav a:hover {
   background-color: rgb(52, 1, 73); /* Couleur de fond légèrement plus foncée lorsque vous survolez le bouton */
 }
 
-/* ******************************************** section2 */
+/* ******************************************** */
+/* section2 */
+#section2 {
+  background-color: #F8F8FF;
+  display: flex;
+  flex-direction: column; /* Pour organiser les éléments verticalement */
+  background-color: #F8F8FF;
+  text-align: center; /* Centrer les éléments enfants en mode bloc */
+  padding-top: 30px;
+}
+
 .sub-title {
   font-size: 12px;
   text-align: center;
   color: rgb(182, 182, 182);
-  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .main-title {
   text-align: center;
   font-size: 36px;
   color: #353434;
-  padding-top: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   font-weight: 350;
 }
 
@@ -165,28 +166,41 @@ nav a:hover {
 
 .features {
   display: flex;
-  justify-content: center;
+  padding-top: 30px;
   gap: 20px;
+  justify-content: center;
 }
 
 .feature {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Effet d'ombre */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  position: relative; /* Pour positionner le numéro à l'intérieur */
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  width: 270px;
+  height: 100px;
+  padding-top: 10px;
+  border-radius: 5px;
 }
 
 .feature-number {
-  position: absolute;
-  top: 10px;
-  left: 10px;
+  font-size: 50px;
   background-image: linear-gradient(45deg, violet, blue);
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
 }
 
-#section2 {
-  text-align: center; /* Centrer les éléments enfants en mode bloc */
+.feature-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  padding-top: 10px;
+}
+
+.feature-title, .feature-description {
+  margin: 0;
 }
 
 .large-feature {
@@ -233,4 +247,106 @@ nav a:hover {
 
 .learn-more-btn:hover {
   background-color: rgb(52, 1, 73); /* Couleur de fond légèrement plus foncée lorsque vous survolez le bouton */
+}
+
+/* ***************************************************************************** */
+/* section3 */
+
+#section3 {
+  height: 100vh; /* 100% de la hauteur de la fenêtre d'affichage */
+  display: flex;
+  justify-content: center;
+  background-color: #F8F8FF;
+  gap: 20px;
+}
+
+.left-section {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 50px;
+  gap: 5px;
+  text-align: left;
+}
+
+/* Retirer les marges et paddings par défaut des éléments enfants */
+.left-section > * {
+  margin-left: 0;
+  padding-left: 0;
+  text-align: left; /* Pour s'assurer que le texte est également aligné à gauche */
+}
+
+.sub-title {
+  color: rgb(182, 182, 182);
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.left-section h2 {
+  margin-left: 0;
+  padding-left: 0;
+  text-align: left;
+  font-size: 36px;
+  color: #353434;
+  padding-bottom: 10px;
+  font-weight: 350;
+}
+
+.left-section h2 span.gradient {
+  background-image: linear-gradient(45deg, violet, blue);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text; /* Pour assurer une meilleure compatibilité avec Safari */
+  font-style: italic;
+}
+
+.details-btn {
+  /* Style pour le bouton. Ajustez selon vos préférences */
+  background-color: #6355c0;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.details-btn:hover {
+  background-color: rgb(52, 1, 73);
+}
+
+.right-section {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 50px;
+}
+
+.service {
+  height: 120px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none;  /* Enlève le soulignement du lien */
+  color: inherit;         /* Garde les couleurs du texte standard */
+  cursor: pointer;        /* Indique qu'il s'agit d'un élément cliquable */
+  border-radius: 5px;
+}
+
+.service-logo {
+  width: 60px; /* Ajustez selon la taille de votre logo */
+  height: 60px;
+  object-fit: cover; /* Ajuste l'image à l'intérieur du conteneur tout en conservant son aspect */
+}
+
+.service h3, .service p {
+  margin: 0; /* Retire les marges par défaut pour une meilleure apparence */
 }
