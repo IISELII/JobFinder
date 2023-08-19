@@ -1,32 +1,138 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #294E54;
-    color: #F0F0F2; /* Couleur des textes */
+/* Remise à zéro de certains styles par défaut des navigateurs */
+body, h1, h2, h3, ul, li, p {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
 }
-
-
-header {
-    background-color: #00747d;
-    padding: 20px;
-    text-align: center;
-}
-
 
 h1, h2, h3, h4, h5, h6 {
-    color: #ffffff;
+  font-family: sans-serif;
 }
 
-/* Couleur des liens */
-a {
-    color: #ffffff;  /* Couleur des textes */
-    text-decoration: none; /* Supprimer le soulignement des liens */
+p {
+  font-family: sans-serif;
+  word-spacing: 4px;
+  line-height: 1.5;
+  font-weight: 200;
 }
 
-a:hover {
-    text-decoration: underline; /* Souligner les liens lors du survol pour une meilleure UX */
+header {
+  background-color: #ffffff;
+  color: #000;;
+  text-align: center;
+  padding: 1rem 0;
 }
 
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center; /* Centre les éléments de la liste horizontalement */
+}
 
-section {
-    margin: 20px;
+nav li {
+  margin: 0 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  transition: color 0.3s;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ddd;
+}
+
+.page-section {
+  min-height: 100vh; /* Force chaque section à prendre au moins la hauteur de la fenêtre/écran de l'utilisateur. */
+  padding: 0; /* Espacement intérieur pour le contenu */
+}
+
+/* Styles spécifiques pour chaque section si vous le souhaitez, par exemple: */
+#section1 {
+  min-height: 50vh; /* 2/4 de la hauteur de l'écran */
+  background-color: #E6E6FA80;
+}
+
+#section2 {
+  background-color: #ddd;
+}
+
+#section3 {
+  background-color: #bbb;
+}
+
+.content-wrapper {
+  display: flex; /* Active le modèle Flexbox */
+  width: 100%;
+  height: 100%; /* Prend toute la hauteur du parent */
+  justify-content: space-between; /* Espacement entre les éléments */
+  align-items: center; /* Centre les éléments verticalement */
+}
+
+.text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* Organise les éléments enfants en colonne */
+  justify-content: center; /* Centre les éléments verticalement */
+  align-items: center; /* Centre les éléments horizontalement */
+  padding-right: 20px;
+  text-align: center; /* Pour que le texte lui-même soit centré */
+}
+
+.text-content h2 {
+  font-size: 36px;
+  color: #353434;
+  margin-bottom: 10px;
+  font-weight: 350;
+}
+
+.text-content h2 span.gradient {
+  background-image: linear-gradient(45deg, violet, blue);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text; /* Pour assurer une meilleure compatibilité avec Safari */
+}
+
+.text-content p {
+  font-size: 14px;
+  color: #838383;
+  text-align: left; /* Aligner le texte à gauche par rapport à son conteneur */
+  margin-left: -41px;
+}
+
+.image-content {
+  flex: 1; /* Permet à .image-content d'occuper 50% de .content-wrapper */
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.get-started-btn {
+  background-color: #6355c0;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;  /* Espacement au-dessus du bouton */
+  transition: background-color 0.3s;
+  margin-left: -190px;
+}
+
+.get-started-btn:hover {
+  background-color: rgb(52, 1, 73); /* Couleur de fond légèrement plus foncée lorsque vous survolez le bouton */
 }
