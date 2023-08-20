@@ -41,27 +41,39 @@ nav a {
   font-weight: bold;
 }
 
+/* Lien du menu survolé */
 nav a:hover {
-  color: #ddd;
+  color: #6355c0;
+}
+
+/* Lien de la page actuelle */
+nav a.active {
+  color: #6355c0;
 }
 
 .page-section {
-  min-height: 100vh; /* Force chaque section à prendre au moins la hauteur de la fenêtre/écran de l'utilisateur. */
-  padding: 0; /* Espacement intérieur pour le contenu */
+  padding: 0;
+  margin: 0;
+  min-height: 85vh;
+  background-color: #F8F8FF;
 }
 
-
 #section1 {
-  min-height: 50vh; /* 2/4 de la hauteur de l'écran */
+  padding: 0;
+  margin: 0;
+  display: flex; /* Ajoutez cette ligne */
+  justify-content: center; /* Centre les éléments horizontalement */
+  align-items: center; /* Centre les éléments verticalement */
+  min-height: 77vh;
   background-color: #E6E6FA80;
 }
 
 .content-wrapper {
-  display: flex; /* Active le modèle Flexbox */
+  display: flex;
   width: 100%;
-  height: 100%; /* Prend toute la hauteur du parent */
-  justify-content: space-between; /* Espacement entre les éléments */
-  align-items: center; /* Centre les éléments verticalement */
+  height: 100%; /* Cette propriété est déjà correcte */
+  justify-content: space-between;
+  align-items: center;
 }
 
 .text-content {
@@ -97,20 +109,17 @@ nav a:hover {
 }
 
 .image-content {
-  flex: 1; /* Permet à .image-content d'occuper 50% de .content-wrapper */
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .image-content img {
-  width: 100%;
-  height: 100%;
+  width: auto; /* Modifiez cette propriété pour garder le rapport d'aspect de l'image */
+  height: 100%; /* L'image prendra 100% de la hauteur de .content-wrapper */
   object-fit: cover;
-  display: block;
 }
 
 .get-started-btn {
@@ -133,12 +142,12 @@ nav a:hover {
 /* ******************************************** */
 /* section2 */
 #section2 {
+  min-height: 100vh;
   background-color: #F8F8FF;
   display: flex;
   flex-direction: column; /* Pour organiser les éléments verticalement */
-  background-color: #F8F8FF;
   text-align: center; /* Centrer les éléments enfants en mode bloc */
-  padding-top: 30px;
+  padding-top: 0px;
 }
 
 .sub-title {
@@ -248,6 +257,96 @@ nav a:hover {
 .learn-more-btn:hover {
   background-color: rgb(52, 1, 73); /* Couleur de fond légèrement plus foncée lorsque vous survolez le bouton */
 }
+/* ***************************************************************************** */
+/* section4 */
+
+#section4 {
+  display: flex;
+  height: 90vh;  /* assuming you want it to take the whole viewport height */
+  background-color:#E6E6FA80;
+  justify-content: center;  /* This will center the children elements */
+  align-items: center;  /* This ensures the contents are vertically centered */
+  margin-left: -10%;
+}
+
+.facts-image {
+  flex-basis: 40%;  /* Adjust this value as needed. It defines the base size of the element before distributing space */
+  display: flex;
+  justify-content: center;  /* Centers the image */
+  align-items: center;
+  overflow: hidden;
+}
+
+.facts-image img {
+  width: 100%;  /* Adjust this to control the size of the image within its container */
+  height: auto;
+}
+
+.facts-content {
+  flex-basis: 30%;  /* Adjust this value as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 10px;  /* Reduced padding */
+}
+
+.satisfaction-text {
+  font-size: 12px;
+  color: rgb(182, 182, 182);
+  text-align: left;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+
+.facts-content h2 {
+  margin-left: 0;
+  padding-left: 0;
+  text-align: left;
+  font-size: 36px;
+  color: #353434;
+  padding-bottom: 10px;
+  font-weight: 350;
+}
+
+.facts-content h2 span.gradient {
+  background-image: linear-gradient(45deg, violet, blue);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text; /* Pour assurer une meilleure compatibilité avec Safari */
+  font-style: italic;
+}
+
+.kpis {
+  display: flex;
+  gap: 20px; /* space between the KPIs */
+  width: 80%;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.kpi {
+  flex: 1;
+  text-align: center;
+}
+
+.kpi-value {
+  font-family: a;
+  text-align: left;
+  font-size: 36px;
+  color: #353434;
+  font-weight: bold;
+}
+
+.kpi h4 {
+  text-align: left;
+  font-size: 14px;
+  color: #353434;
+  font-weight: 350;
+  font-weight: bold;
+}
+
 
 /* ***************************************************************************** */
 /* section3 */
