@@ -20,20 +20,31 @@ header {
   background-color: #ffffff;
   text-align: center;
   display: flex;
-  justify-content: center; /* Changé de center à space-between */
+  justify-content: center; 
   align-items: center;
 }
 
+.nav-links-wrapper {
+  padding: 0 150px;
+  padding-left: 250px;  /* Pour décaler légèrement le contenu vers la droite */
+  margin-left: -200px;
+}
+
+.nav-links-button-wrapper {
+  margin-left: 100px; 
+}
+
 #navbar-logo {
-  height: 60px; /* ou la taille que vous préférez */
+  height: 60px; 
   width: auto;
+  margin-right: 150px;
 }
 
 nav ul {
   list-style-type: none;
   display: flex;
   justify-content: center;
-  align-items: center; /* Peut être ajouté pour s'assurer que les éléments sont verticalement centrés si vous avez un contenu supplémentaire dans votre `nav` */
+  align-items: center; 
 }
 
 nav li {
@@ -48,12 +59,10 @@ nav a {
   font-weight: bold;
 }
 
-/* Lien du menu survolé */
 nav a:hover {
   color: #6355c0;
 }
 
-/* Lien de la page actuelle */
 nav a.active {
   color: #6355c0;
 }
@@ -77,8 +86,9 @@ nav a.active {
 }
 
 .about-us-btn:hover {
-  background-color: rgb(52, 1, 73); /* Couleur de fond légèrement plus foncée lorsque vous survolez le bouton */
+  background-color: rgb(52, 1, 73);
 }
+
 
 #section1 {
   padding: 0;
