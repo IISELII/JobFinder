@@ -6,21 +6,25 @@ body, h1, h2, h3, p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 p {
-  font-family: sans-serif;
+  font-family: Helvetica;
+  color: #838383;
   word-spacing: 4px;
   line-height: 1.5;
   font-weight: 200;
 }
 
 header {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* pour s'assurer qu'il reste au-dessus des autres éléments */
   background-color: #ffffff;
   text-align: center;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
 }
 
@@ -31,11 +35,11 @@ header {
 }
 
 .nav-links-button-wrapper {
-  margin-left: 100px; 
+  margin-left: 100px;
 }
 
 #navbar-logo {
-  height: 60px; 
+  height: 60px;
   width: auto;
   margin-right: 150px;
 }
@@ -44,7 +48,7 @@ nav ul {
   list-style-type: none;
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 }
 
 nav li {
@@ -119,10 +123,11 @@ nav a.active {
 }
 
 .text-content h2 {
-  font-size: 36px;
+  font-size: 48px;
   color: #353434;
   margin-bottom: 10px;
-  font-weight: 350;
+  font-weight: 500;
+  margin-right: -90px;
 }
 
 .text-content h2 span.gradient {
@@ -134,10 +139,11 @@ nav a.active {
 }
 
 .text-content p {
-  font-size: 14px;
+  font-size: 20px;
   color: #838383;
   text-align: left; /* Aligner le texte à gauche par rapport à son conteneur */
-  margin-left: -41px;
+  margin-top: 10px;
+  margin-right: -50px;
 }
 
 .image-content {
@@ -158,13 +164,13 @@ nav a.active {
   background-color: #6355c0;
   color: white;
   border: none;
-  padding: 10px 15px;
+  padding: 15px 20px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
-  margin-top: 10px;  /* Espacement au-dessus du bouton */
+  margin-top: 25px;  /* Espacement au-dessus du bouton */
   transition: background-color 0.3s;
-  margin-left: -190px;
+  margin-left: -180px;
 }
 
 .get-started-btn:hover {
@@ -184,9 +190,10 @@ nav a.active {
 }
 
 .sub-title {
-  font-size: 12px;
+  font-size: 14px;
   text-align: center;
   color: rgb(182, 182, 182);
+  padding-top: 30px;
   padding-bottom: 20px;
 }
 
@@ -195,7 +202,7 @@ nav a.active {
   font-size: 36px;
   color: #353434;
   padding-bottom: 10px;
-  font-weight: 350;
+  font-weight: 500;
 }
 
 .page-section h2 span.gradient {
@@ -220,13 +227,14 @@ nav a.active {
   align-items: flex-start;
   gap: 20px;
   width: 270px;
-  height: 100px;
-  padding-top: 10px;
+  height: 80px;
+  padding-top: 20px;
   border-radius: 5px;
 }
 
 .feature-number {
-  font-size: 50px;
+  font-size: 40px;
+  font-weight: 500;
   background-image: linear-gradient(45deg, violet, blue);
   color: transparent;
   -webkit-background-clip: text;
@@ -241,8 +249,15 @@ nav a.active {
   padding-top: 10px;
 }
 
-.feature-title, .feature-description {
+.feature-title {
   margin: 0;
+}
+
+.feature-description {
+  font-size: 14px;
+  color: #838383;
+  margin: 0px;
+  text-align: left;
 }
 
 .large-feature {
@@ -325,7 +340,7 @@ nav a.active {
 }
 
 .satisfaction-text {
-  font-size: 12px;
+  font-size: 14px;
   color: rgb(182, 182, 182);
   text-align: left;
   font-weight: bold;
@@ -336,11 +351,12 @@ nav a.active {
 .facts-content h2 {
   margin-left: 0;
   padding-left: 0;
+  padding-top: 10px;
   text-align: left;
   font-size: 36px;
   color: #353434;
   padding-bottom: 10px;
-  font-weight: 350;
+  font-weight: 500;
 }
 
 .facts-content h2 span.gradient {
@@ -351,12 +367,16 @@ nav a.active {
   font-style: italic;
 }
 
+.facts-content p {
+  margin-top: 10px;
+}
+
 .kpis {
   display: flex;
-  gap: 20px; /* space between the KPIs */
+  gap: 10px; /* space between the KPIs */
   width: 80%;
   justify-content: center;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .kpi {
@@ -423,7 +443,7 @@ nav a.active {
   font-size: 36px;
   color: #353434;
   padding-bottom: 10px;
-  font-weight: 350;
+  font-weight: 500;
 }
 
 .left-section h2 span.gradient {
