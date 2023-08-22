@@ -33,19 +33,19 @@ header {
 }
 
 .nav-links-wrapper {
-  padding: 0 150px;
-  padding-left: 250px;  /* Pour décaler légèrement le contenu vers la droite */
-  margin-left: -200px;
+  padding: 0 0px;
+  padding-left: 100px;  /* Pour décaler légèrement le contenu vers la droite */
+  margin-left: 0px;
 }
 
 .nav-links-button-wrapper {
-  margin-left: 100px;
+  margin-left: 150px;
 }
 
 #navbar-logo {
   height: 60px;
   width: auto;
-  margin-right: 150px;
+  margin-right: 100px;
 }
 
 nav ul {
@@ -64,7 +64,7 @@ nav a {
   color: #353434;
   transition: color 0.3s;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 nav a:hover {
@@ -79,10 +79,10 @@ nav a.active {
   padding: 0;
   margin: 0;
   min-height: 85vh;
-  background-color: #F8F8FF;
+  background-color: #f9f9f9;
 }
 
-.about-us-btn {
+.login-btn {
   background-color: #6355c0;
   color: white;
   border: none;
@@ -91,12 +91,28 @@ nav a.active {
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.about-us-btn:hover {
+.login-btn:hover {
   background-color: rgb(52, 1, 73);
 }
 
+.create-account-btn {
+  background-color: white;
+  color: #353434;
+  border: 2px solid #797979;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.create-account-btn:hover {
+  background-color: #E6E6FA80;
+}
 
 #section1 {
   padding: 0;
@@ -186,7 +202,7 @@ nav a.active {
 /* section2 */
 #section2 {
   min-height: 100vh;
-  background-color: #F8F8FF;
+  background-color: #f9f9f9;
   display: flex;
   flex-direction: column; /* Pour organiser les éléments verticalement */
   text-align: center; /* Centrer les éléments enfants en mode bloc */
@@ -225,15 +241,19 @@ nav a.active {
 }
 
 .feature {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
   padding: 20px;
   display: flex;
   align-items: flex-start;
   gap: 20px;
   width: 270px;
   height: 80px;
-  padding-top: 20px;
+  padding-top: 10px;
   border-radius: 5px;
+}
+
+.feature.active, .feature:hover {
+  background-color: #ffffff;
 }
 
 .feature-number {
@@ -273,6 +293,8 @@ nav a.active {
   padding-top: 40px;
   margin: 0 auto;
   gap: 40px; /* Espacement entre l'image et le texte */
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .large-feature img {
@@ -412,7 +434,7 @@ nav a.active {
   height: 100vh; /* 100% de la hauteur de la fenêtre d'affichage */
   display: flex;
   justify-content: center;
-  background-color: #F8F8FF;
+  background-color: #f9f9f9;
   gap: 20px;
 }
 
@@ -424,6 +446,18 @@ nav a.active {
   padding-top: 50px;
   gap: 5px;
   text-align: left;
+  position: relative; /* nécessaire pour le positionnement absolu des enfants */
+
+}
+
+.enlarged-service-logo {
+  position: absolute; /* permet à l'image de se positionner par rapport à .left-section */
+  top: calc(100% - 300px); /* positionne l'image juste en dessous des autres contenus, vous pouvez ajuster le -50px selon vos besoins */
+  left: 20%; /* centre l'image horizontalement */
+  transform: translateX(-50%); /* garantit que l'image est centrée indépendamment de sa largeur */
+  max-width: 300px; /* ou tout ce que vous voulez */
+  max-height: 200px; /* ou tout ce que vous voulez */
+  animation: spinAndGrow 3s forwards;
 }
 
 /* Retirer les marges et paddings par défaut des éléments enfants */
@@ -475,6 +509,22 @@ nav a.active {
   background-color: rgb(52, 1, 73);
 }
 
+@keyframes spinAndGrow {
+  from {
+      transform: scale(0.1) rotate(180deg);
+      opacity: 0.5;
+  }
+  to {
+      transform: scale(1) rotate(360deg);
+      opacity: 1;
+  }
+}
+
+.left-section .enlarged-service-logo {
+  /* styles précédents pour .enlarged-service-logo... */
+  animation: spinAndGrow 3s forwards;
+}
+
 .right-section {
   width: 33%;
   display: flex;
@@ -495,6 +545,16 @@ nav a.active {
   color: inherit;         /* Garde les couleurs du texte standard */
   cursor: pointer;        /* Indique qu'il s'agit d'un élément cliquable */
   border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.service:hover {
+  background-color: #ffffff; /* change la couleur de fond lorsque survolé */
+}
+
+.service.active {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
 }
 
 .service-logo {
@@ -505,4 +565,37 @@ nav a.active {
 
 .service h3, .service p {
   margin: 0; /* Retire les marges par défaut pour une meilleure apparence */
+  display: block; /* Assure que l'élément occupe toute la largeur disponible et passe à la ligne */
+}
+
+.service h3 {
+  padding-top: 10px;
+  margin-bottom: 10px; /* Ajustez cette valeur selon vos besoins */
+}
+
+.service-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.goto-service-btn {
+  display: none; /* Caché par défaut */
+  margin-left: auto; /* Pour le pousser à droite */
+  margin-right: -220px;
+  padding: 10px 15px;
+  font-size: 14px;
+  background-color: #6355c0; /* Couleur de fond de votre choix */
+  color: white; /* Couleur du texte de votre choix */
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.goto-service-btn:hover {
+  background-color: rgb(52, 1, 73);
+}
+
+.service.active .goto-service-btn {
+  display: block; /* Montré lorsque .service est actif */
 }
