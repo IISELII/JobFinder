@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/logo2-3.png" type="image/png">
+    <title>Job Finder</title>
+    <link rel="stylesheet" href="login_styles.css">
+</head>
+<body>
+    <header>
+      <img src="../images/logo2-3.png" alt="Your Logo" id="navbar-logo">
+      <nav>
+          <div class="nav-links-wrapper">
+              <ul>
+                  <li><a href="../index.html#section1">HOME</a></li>
+                  <li><a href="../index.html#section2">PROCESS</a></li>
+                  <li><a href="../index.html#section4">FACTS</a></li>
+                  <li><a href="aboutus.html">ABOUT US</a></li>
+                  <li><a href="../index.html#section3">SERVICES</a></li>
+                  <li class="nav-links-button-wrapper">
+                      <button class="login-btn" onclick="location.href='../pages/login.html'">Login</button>
+                      <button class="create-account-btn" onclick="location.href='../pages/createaccount.html'">Create Account</button>
+                  </li>
+              </ul>
+          </div>
+      </nav>
+    </header>
+    <div class="wrapper">
+        <div class="login-container">
+            <div class="login-content">
+                <div class="text-section">
+                    <div class="text-content">
+                        <h1 class="title">Welcome back</h1>
+                        <p class="sub-title">Welcome back! Please enter your details</p>
+            
+                        <label for="email">Email</label>
+                        <input type="email" id="email">
+            
+                        <label for="password">Password</label>
+                        <input type="password" id="password">
+            
+                        <div class="checkbox-section">
+                            <input type="checkbox" id="remember">
+                            <label for="remember" class="remember">Remember for 30 days</label>
+                            <p><a href="#">Forgot password</a></p>
+                        </div>
+            
+                        <button class="sign-in-btn">Sign in</button>
+                        <button class="google-btn">Sign in with Google</button>
+            
+                        <p class="signup-link">Don't have an account? <a href="createaccount.html">Sign up</a></p>
+                    </div>
+                </div>
+                <div class="image-section">
+                    <img src="../images/image-loading.png" alt="Your Image">
+                </div>
+            </div>
+        </div>    
+    </div>
+
+    <section>
+        <!-- Ajoutez ici vos visualisations (ex: graphiques, cartes, etc.) -->
+    </section>
+
+    <script src="main.js"></script>
+</body>
+</html>

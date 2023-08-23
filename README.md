@@ -9,7 +9,6 @@ Code couleurs de l'application :
 
 # Input du modèle : 
 
-- job
 - description
 - tools
 - secteur / Industrie
@@ -38,4 +37,32 @@ La deuxième solution :
 
 - utiliser un modèle IA pour extraire les bon nom de job (ex:Data Engineer pour la Qualité Totale H/F (H/F) --> Data Engineer)
 - maintenant qu'on a les bon noms de job, faire un df["jobs"].unique() et accéder à tout les noms de job, les envoyer à ChatGPT en lui demandant de nous faire une description de chaque job.
-- mettre le résultat dans une liste qu'on transformera en dataframe et qu'on mergera au dataframe principale. 
+- mettre le résultat dans une liste qu'on transformera en dataframe et qu'on mergera au dataframe principale.
+
+# Modèle d'IA pour extraire les bon noms de job
+
+4 solutions potentielles : 
+
+Approche basée sur les clustering :
+
+- Les modèles comme BERT ou d'autres modèles d'embedding peuvent convertir vos titres en vecteurs. Vous pouvez ensuite utiliser une technique de clustering (comme le K-means) pour regrouper des titres similaires. Une fois les clusters formés, vous pouvez examiner manuellement les centres de clusters pour définir le titre représentatif de chaque cluster. Mais les clusters risque d'être trop vague et donc la prédiction ne sera pas assez précise.
+
+En utilisant Regex ou Spacy :
+
+- SpaCy est une bibliothèque populaire pour le traitement du langage naturel qui possède un modèle préentraîné pour la reconnaissance d'entités nommées en anglais (et d'autres langues). Bien que cela ne soit pas directement adapté à votre tâche, il est possible que le modèle puisse identifier les titres de poste comme des entités.
+
+Zero-shot learning avec BERT :
+
+- Bien que BERT soit principalement un modèle d'extraction de caractéristiques, vous pouvez l'utiliser pour des tâches de classification en zéro-shot. En gros, vous formulez votre tâche comme une tâche de similarité sémantique. Vous donnez à BERT une phrase comme "La tâche de ce poste est Data Engineer" et vous la comparez à vos titres. Le titre le plus similaire peut être considéré comme étant celui de "Data Engineer".
+
+Utiliser un modèle de résumé automatique : 
+
+- L'idée ici est un peu non conventionnelle, mais vous pourriez essayer d'utiliser un modèle de résumé pour résumer les titres de poste. Le modèle pourrait éliminer les informations non essentielles et conserver uniquement le titre du poste.
+
+# Comment envoyer au modèle des une liste de description pour chaque job du df 
+
+Le faire à la main est plutôt simple, mais l'automatiser est une necessitée en terme de temps et d'effort requis pour cette tâche, mais comment faire ? 
+
+- Faire une fonction qui créer une liste de listes à partir du df (chaque sub_liste contiendra des description pour un job donné)
+- Faire une fonction qui envoie au modèle cette liste de listes, le modèle prendra step by step chaque sub_liste et summarisera tous les texte de cette sub_liste en un seul text (la future description de ce job)
+- au finale, la fonction renverra une liste de listes comme en input, mais cette fois ci chaque sub_liste ne contiendra qu'une seul description (la summarisation fait par le modèle et la futur colonne job_description)
