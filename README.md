@@ -79,14 +79,24 @@ Le faire à la main est plutôt simple, mais l'automatiser est une necessitée e
 
 # Create a CV 
 
-Ce service, comme son nom l'indique, a pour objectif d'aider l'utilisateur à faire son CV. En lui demandant de fournir seulement quelques informations (nom, prénom, adresse...), le service lui écrira un CV typique qu'il pourra utiliser pour postuler à un poste. 
+Ce service, comme son nom l'indique, a pour objectif d'aider l'utilisateur à faire son CV. En lui proposant plusieurs template de CV, il pourra modifier un exemple CV déjà fait pour l'adapter au sien en remplissant ses propres informations.
 
 Mais comment faire ? : 
 
-- 
-
+- Récupérer ou créer plusieurs template de CV
+- Permettre à l'utilisateur de choisir un template
+- Lui permettre de modifier / Changer les informations sur ce CV (photo, formations, compétences... Tout le text en fait)
+- possibilitée de télécharger ce cv en pdf, ... .
 
 
 # Create a motivation letter
 
 Ce service est similaire à "Create a CV", il a pour objectif d'aider l'utilisateur à faire sa lettre de motivation. En lui demandant de fournir seulement quelques informations (nom, prénom, adresse...), le service lui écrira une lettre de motivaiton typique qu'il pourra utiliser pour postuler à un poste.
+
+Mais comment faire ? :
+
+- Récupérer des exemples de lettre de motivation 
+- Extraire du texte les informations principale pour chaque lettres de motivation (nom, prénom, adresse...), et créer un dataframe avec les informations extraites en input et la lettre de motivation en target.
+- Entrainer un modèle d'IA avec ces données
+- Quand l'utilisateur se rend sur le service, lui demander de nous fournir quelques informations (nom, prénom, formations, skills, défaut, qualité, ce qu'il aime faire, pourquoi est-ce qu'il veux travailler pour son job ? ...)
+- Et on génère une lettre de motivation personnalisé en un clin d'oeil ! Pas besoin de s'embêter à écrire une lettre de motivation de A à Z.
