@@ -237,6 +237,12 @@ margin-top: 20px;
 text-align: center;
 }
 
-.signup-link p {
+.signup-link a {
+  text-decoration: none;  /* enlève le souslignement */
+  color: #6355c0;  /* définit la couleur du texte */
+}
 
+/* Si vous souhaitez que le lien change de couleur lorsqu'il est survolé, vous pouvez ajouter : */
+.signup-link a:hover {
+  color: #4a419b;  /* une nuance légèrement plus foncée que #6355c0 pour le hover */
 }
