@@ -1,103 +1,257 @@
-body, h1, h2, h3, p {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-  }
-  
-  p {
-    font-family: Helvetica;
-    color: #838383;
-    word-spacing: 4px;
-    line-height: 1.5;
-    font-weight: 200;
-  }
-  
-  header {
-    position: sticky;
-    top: 0;
-    z-index: 1000; /* pour s'assurer qu'il reste au-dessus des autres éléments */
-    background-color: #ffffff;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .nav-links-wrapper {
-    padding: 0 0px;
-    padding-left: 100px;  /* Pour décaler légèrement le contenu vers la droite */
-    margin-left: 0px;
-  }
-  
-  .nav-links-button-wrapper {
-    margin-left: 150px;
-  }
-  
-  #navbar-logo {
-    height: 60px;
-    width: auto;
-    margin-right: 100px;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  nav li {
-    margin: 0 1.2rem;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: #353434;
-    transition: color 0.3s;
-    font-size: 14px;
-    font-weight: 500;
-  }
-  
-  nav a:hover {
-    color: #6355c0;
-  }
-  
-  nav a.active {
-    color: #6355c0;
-  }
+body {
+  font-family: Arial, sans-serif;
+  background-color: #E6E6FA80;
+  margin: 0;
+  display: block; /* Ici, on change le display pour revenir à block (au lieu de flex) */
+}
 
-  .login-btn {
-    background-color: #6355c0;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .login-btn:hover {
-    background-color: rgb(52, 1, 73);
-  }
-  
-  .create-account-btn {
-    background-color: white;
-    color: #353434;
-    border: 2px solid #797979;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .create-account-btn:hover {
-    background-color: #E6E6FA80;
-  }
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+p {
+  font-family: Helvetica;
+  color: #838383;
+  word-spacing: 4px;
+  line-height: 1.5;
+  font-weight: 200;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* pour s'assurer qu'il reste au-dessus des autres éléments */
+  background-color: #ffffff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-links-wrapper {
+  padding: 0 0px;
+  padding-left: 100px;  /* Pour décaler légèrement le contenu vers la droite */
+  margin-left: 0px;
+}
+
+.nav-links-button-wrapper {
+  margin-left: 150px;
+}
+
+#navbar-logo {
+  height: 60px;
+  width: auto;
+  margin-right: 100px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav li {
+  margin: 0 1.2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #353434;
+  transition: color 0.3s;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #6355c0;
+}
+
+nav a.active {
+  color: #6355c0;
+}
+
+.login-btn {
+  background-color: #6355c0;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-btn:hover {
+  background-color: rgb(52, 1, 73);
+}
+
+.create-account-btn {
+  background-color: white;
+  color: #353434;
+  border: 2px solid #797979;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.create-account-btn:hover {
+  background-color: #E6E6FA80;
+}
+
+/* *************************************************************** */
+/* login container */
+
+.wrapper { /* Nous ajoutons un wrapper autour de votre contenu principal */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 60px); /* 60px est la hauteur approximative de votre navbar. Ajustez selon votre besoin */
+  margin-top: 60px; /* Pour tenir compte de la hauteur de votre navbar */
+}
+
+.login-container {
+  width: 80vw;
+  height: 85vh;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+
+.login-content {
+display: flex;
+width: 100%;
+height: 100%;
+}
+
+.text-section {
+width: 50%;
+padding: 0px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+background-color: white;
+}
+
+.text-content {
+  width: 70%;  /* ou la largeur que vous souhaitez */
+  margin: 0 auto; /* pour la centrer horizontalement */
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.sub-title {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.image-section {
+  width: 50%;
+  background-color: #f5f5f5;
+  display: flex;           /* Ajoutez ces propriétés */
+  justify-content: center; /* Centre l'image horizontalement */
+  align-items: center;     /* Centre l'image verticalement */
+}
+
+/* Assurez-vous que votre image réagit correctement à la taille de son conteneur, si nécessaire */
+.image-section img {
+  max-width: 80%;          /* Pour éviter que l'image soit trop grande */
+  max-height: 80%;         /* Adaptez ces pourcentages à vos besoins */
+}
+
+label {
+margin-top: 20px;
+}
+
+input[type="name"],
+input[type="email"],
+input[type="password"] {
+width: 95%;
+padding: 10px;
+margin-top: 5px;
+border-radius: 4px;
+border: 1px solid #ccc;
+}
+
+.checkbox-section {
+display: flex;
+align-items: center;
+margin-top: 20px;
+}
+
+.text-content input[type="name"] {
+  margin-bottom: 20px;
+}
+
+.text-content input[type="email"] {
+  margin-bottom: 20px;
+}
+
+.text-content input[type="password"] {
+  margin-bottom: 20px;
+}
+
+.checkbox-section input[type="checkbox"] {
+margin-right: 10px;
+}
+
+.checkbox-section label[for="remember"] {
+  font-size: 16px;
+  padding-bottom: 20px;
+}
+
+.checkbox-section p {
+margin-left: auto;
+font-size: 16px;
+}
+
+.checkbox-section p a {
+  color: #6355c0;
+  text-decoration: none; /* Cela enlèvera le soulignement */
+}
+
+.checkbox-section p a:hover {
+  color: #4949a8; /* Ou toute autre couleur de votre choix pour l'effet hover */
+}
+
+.sign-in-btn {
+margin-top: 20px;
+width: 100%;
+padding: 15px;
+background-color: #6355c0;
+color: white;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+.google-btn {
+margin-top: 10px;
+width: 100%;
+padding: 15px;
+background-color: white;
+border: 1px solid #ccc;
+border-radius: 4px;
+cursor: pointer;
+}
+
+.signup-link {
+margin-top: 20px;
+text-align: center;
+}
+
+.signup-link a {
+  text-decoration: none;  /* enlève le souslignement */
+  color: #6355c0;  /* définit la couleur du texte */
+}
+
+/* Si vous souhaitez que le lien change de couleur lorsqu'il est survolé, vous pouvez ajouter : */
+.signup-link a:hover {
+  color: #4a419b;  /* une nuance légèrement plus foncée que #6355c0 pour le hover */
+}

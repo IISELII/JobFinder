@@ -116,7 +116,7 @@ nav a.active {
 
 .login-container {
   width: 80vw;
-  height: 80vh;
+  height: 85vh;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   display: flex;
 }

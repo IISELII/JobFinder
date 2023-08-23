@@ -1,5 +1,14 @@
+# Market Analysis
+
+Ce service vise à offrir à l'utilisateur la possibilité d'avoir accès à des visualisations à jour du marché de l'emploi. Il pourra en apprendre sur le recrutement dans un secteur en particulier (la santé par exemple), sur un job particulier (médecin, infirmère), sur le type de contrat que les entreprises demande le plus (CDI, CDD, Altrnance, Stage...) et bien plus encore !
+
 # JobFinder
-Une application web qui conseillera un utilisateur en lui proposant des jobs qui lui correspondent
+Ce service conseillera un utilisateur en lui proposant un job qui lui correspond, une description de ce job, avec un lien vers des offres d'emploi pour ce job (qui date au maximum de 7 jours).
+
+Ce service conseillera de deux manières différentes (au choix par l'utilisateur) : 
+
+- Un formulaire à remplir (les input du modèle) avec un bouton "Find your Job" pour sortir les prédictions du modèle
+- Un chatbot permettant une discussion avec l'utilisateur plus personnalisé et une possibilité de poser des question à l'IA (Quelles compétence je dois maîtriser pour ce job ? Quelle formation dois-je faire ? Est-ce que le secteur de la santé recrute actuellement ? J'aime le social et le design, quel job me conseillerais-tu ?...) 
 
 Code couleurs de l'application : 
 - SEIGNEURIE bleu banten #294E54
@@ -66,3 +75,18 @@ Le faire à la main est plutôt simple, mais l'automatiser est une necessitée e
 - Faire une fonction qui créer une liste de listes à partir du df (chaque sub_liste contiendra des description pour un job donné)
 - Faire une fonction qui envoie au modèle cette liste de listes, le modèle prendra step by step chaque sub_liste et summarisera tous les texte de cette sub_liste en un seul text (la future description de ce job)
 - au finale, la fonction renverra une liste de listes comme en input, mais cette fois ci chaque sub_liste ne contiendra qu'une seul description (la summarisation fait par le modèle et la futur colonne job_description)
+
+
+# Create a CV 
+
+Ce service, comme son nom l'indique, a pour objectif d'aider l'utilisateur à faire son CV. En lui demandant de fournir seulement quelques informations (nom, prénom, adresse...), le service lui écrira un CV typique qu'il pourra utiliser pour postuler à un poste. 
+
+Mais comment faire ? : 
+
+- 
+
+
+
+# Create a motivation letter
+
+Ce service est similaire à "Create a CV", il a pour objectif d'aider l'utilisateur à faire sa lettre de motivation. En lui demandant de fournir seulement quelques informations (nom, prénom, adresse...), le service lui écrira une lettre de motivaiton typique qu'il pourra utiliser pour postuler à un poste.
