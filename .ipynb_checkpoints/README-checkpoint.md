@@ -68,7 +68,7 @@ Utiliser un modèle de résumé automatique :
 
 - L'idée ici est un peu non conventionnelle, mais vous pourriez essayer d'utiliser un modèle de résumé pour résumer les titres de poste. Le modèle pourrait éliminer les informations non essentielles et conserver uniquement le titre du poste.
 
-# Comment envoyer au modèle des une liste de description pour chaque job du df 
+# Comment envoyer au modèle une liste de description pour chaque job du df 
 
 Le faire à la main est plutôt simple, mais l'automatiser est une necessitée en terme de temps et d'effort requis pour cette tâche, mais comment faire ? 
 
