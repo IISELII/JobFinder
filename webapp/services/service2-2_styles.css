@@ -1,0 +1,104 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #E6E6FA80;
+  margin: 0;
+  display: block; /* Ici, on change le display pour revenir à block (au lieu de flex) */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+p {
+  font-family: Helvetica;
+  color: #838383;
+  word-spacing: 4px;
+  line-height: 1.5;
+  font-weight: 200;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* pour s'assurer qu'il reste au-dessus des autres éléments */
+  background-color: #ffffff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-links-wrapper {
+  padding: 0 0px;
+  padding-left: 100px;  /* Pour décaler légèrement le contenu vers la droite */
+  margin-left: 0px;
+}
+
+.nav-links-button-wrapper {
+  margin-left: 150px;
+}
+
+#navbar-logo {
+  height: 60px;
+  width: auto;
+  margin-right: 100px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav li {
+  margin: 0 1.2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #353434;
+  transition: color 0.3s;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #6355c0;
+}
+
+nav a.active {
+  color: #6355c0;
+}
+
+.login-btn {
+  background-color: #6355c0;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-btn:hover {
+  background-color: rgb(52, 1, 73);
+}
+
+.create-account-btn {
+  background-color: white;
+  color: #353434;
+  border: 2px solid #797979;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.create-account-btn:hover {
+  background-color: #E6E6FA80;
+}
