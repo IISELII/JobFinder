@@ -109,6 +109,7 @@ nav a.active {
 .transition1 {
   text-align: center;
   padding: 20px;
+  background-color: #f9f9f9;
 }
 
 .parent-div {
@@ -131,14 +132,14 @@ nav a.active {
 }
 
 
-.job-finder-div img {
+.job-finder-div a img {
   width: 50%; /* ajustez cette valeur pour augmenter ou diminuer la taille */
   height: auto;
   padding-top: 10px;
   padding-bottom: 35px;
 }
 
-.chat-finder-div img {
+.chat-finder-div a img {
   width: 50%; /* ajustez cette valeur pour augmenter ou diminuer la taille */
   height: auto;
 }
@@ -157,4 +158,20 @@ button {
 
 button:hover {
   background-color: #533da9;
+}
+
+/* Réinitialisation des styles pour les liens */
+.job-finder-div a, .chat-finder-div a {
+  width: 100%; /* ajustez cette valeur pour augmenter ou diminuer la taille */
+  height: auto;
+  text-decoration: none; /* retire le soulignement */
+  color: inherit; /* hérite la couleur du texte environnant */
+  display: inline-block; /* pour permettre la transformation */
+}
+
+/* Styles pour l'effet d'ombre sur les images au survol */
+.job-finder-div a img:hover, .chat-finder-div a img:hover {
+  transition: transform 0.3s, box-shadow 0.3s; /* effet de transition doux */
+  transform: translateY(-5px); /* effet de soulèvement */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15); /* effet d'ombre */
 }
