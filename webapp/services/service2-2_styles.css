@@ -102,3 +102,61 @@ nav a.active {
 .create-account-btn:hover {
   background-color: #E6E6FA80;
 }
+
+/* *************************************************************************** */
+
+.chat-page {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 20%;
+  background-color: #E6E6FA80;
+  height: 100vh;
+}
+
+.chat-area {
+  width: 80%;
+  background-color: #f9f9f9;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.conversations {
+  max-height: calc(100vh - 80px); /* On réserve de l'espace pour la barre d'input */
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+.chatbot-image {
+  position: absolute;
+  bottom: 60px; /* Hauteur de la barre d'input + un petit espace */
+  left: 20px;
+}
+
+.chatbot-image img {
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.chat-input-container {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 60%; /* Ajustez selon vos besoins */
+}
+
+.chat-input {
+  width: 100%;
+  border: none;
+  padding: 10px 20px;
+  outline: none;
+  font-size: 16px;
+}
