@@ -29,25 +29,37 @@
 
     <div class="chat-page">
       <div class="sidebar">
-          <!-- Vous pouvez ajouter des éléments dans cette barre latérale si nécessaire -->
+            <div class="sidebar-header">
+                <button class="new-chat-btn">
+                    <span class="icon">+</span>
+                    <span class="text">New chat</span>
+                </button>
+                <button class="close-sidebar-btn">
+                    <span class="icon">✖️</span> <!-- Pour l'icône, j'ai utilisé la croix ✖️, mais vous pouvez le remplacer par n'importe quelle autre icône de votre choix -->
+                </button>
+            </div>
+            <!-- Le reste de votre contenu sidebar ira ici -->
       </div>
       <div class="chat-area">
-          <div class="conversations">
-              <!-- Les messages avec le chatbot seront affichés ici -->
-          </div>
-          <div class="chatbot-image">
-              <img src="../images/chat-image.png" alt="Image Chatbot">
-          </div>
-          <div class="chat-input-container">
-              <input type="text" placeholder="Écrivez ici..." class="chat-input">
-          </div>
-      </div>
+        <div id="conversations">
+            <!-- Les messages avec le chatbot seront affichés ici -->
+        </div>
+        <div class="question-div">
+            <div class="chatbot-image">
+                <img src="../images/chat-image.png" alt="Image Chatbot">
+            </div>
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Écrivez ici..." class="chat-input">
+                <button id="send-btn" class="send-btn">&gt;</button>
+            </div>
+        </div>
     </div>
 
     <section>
         <!-- Ajoutez ici vos visualisations (ex: graphiques, cartes, etc.) -->
     </section>
 
-    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="service2-2.js"></script>
 </body>
 </html>
