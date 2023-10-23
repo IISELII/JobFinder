@@ -336,33 +336,33 @@ nav a.active {
 
 #section4 {
   display: flex;
-  height: 90vh;  /* assuming you want it to take the whole viewport height */
+  height: 90vh;
   background-color:#E6E6FA80;
-  justify-content: center;  /* This will center the children elements */
-  align-items: center;  /* This ensures the contents are vertically centered */
+  justify-content: center;
+  align-items: center;
   margin-left: -10%;
 }
 
 .facts-image {
-  flex-basis: 40%;  /* Adjust this value as needed. It defines the base size of the element before distributing space */
+  flex-basis: 40%;
   display: flex;
-  justify-content: center;  /* Centers the image */
+  justify-content: center;
   align-items: center;
   overflow: hidden;
 }
 
 .facts-image img {
-  width: 100%;  /* Adjust this to control the size of the image within its container */
+  width: 100%;
   height: auto;
 }
 
 .facts-content {
-  flex-basis: 30%;  /* Adjust this value as needed */
+  flex-basis: 30%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding-left: 10px;  /* Reduced padding */
+  padding-left: 10px;
 }
 
 .satisfaction-text {
@@ -389,7 +389,7 @@ nav a.active {
   background-image: linear-gradient(45deg, violet, blue);
   color: transparent;
   background-clip: text;
-  -webkit-background-clip: text; /* Pour assurer une meilleure compatibilité avec Safari */
+  -webkit-background-clip: text;
   font-style: italic;
 }
 
@@ -399,7 +399,7 @@ nav a.active {
 
 .kpis {
   display: flex;
-  gap: 10px; /* space between the KPIs */
+  gap: 10px;
   width: 80%;
   justify-content: center;
   padding-top: 10px;
@@ -431,7 +431,7 @@ nav a.active {
 /* section3 */
 
 #section3 {
-  height: 100vh; /* 100% de la hauteur de la fenêtre d'affichage */
+  height: 100vh;
   display: flex;
   justify-content: center;
   background-color: #f9f9f9;
@@ -446,25 +446,25 @@ nav a.active {
   padding-top: 50px;
   gap: 5px;
   text-align: left;
-  position: relative; /* nécessaire pour le positionnement absolu des enfants */
+  position: relative;
 
 }
 
 .enlarged-service-logo {
-  position: absolute; /* permet à l'image de se positionner par rapport à .left-section */
-  top: calc(100% - 300px); /* positionne l'image juste en dessous des autres contenus, vous pouvez ajuster le -50px selon vos besoins */
-  left: 20%; /* centre l'image horizontalement */
-  transform: translateX(-50%); /* garantit que l'image est centrée indépendamment de sa largeur */
-  max-width: 300px; /* ou tout ce que vous voulez */
-  max-height: 200px; /* ou tout ce que vous voulez */
+  position: absolute;
+  top: calc(100% - 300px);
+  left: 20%;
+  transform: translateX(-50%);
+  max-width: 300px;
+  max-height: 200px;
   animation: spinAndGrow 3s forwards;
 }
 
-/* Retirer les marges et paddings par défaut des éléments enfants */
+
 .left-section > * {
   margin-left: 0;
   padding-left: 0;
-  text-align: left; /* Pour s'assurer que le texte est également aligné à gauche */
+  text-align: left;
 }
 
 .sub-title {
@@ -488,12 +488,11 @@ nav a.active {
   background-image: linear-gradient(45deg, violet, blue);
   color: transparent;
   background-clip: text;
-  -webkit-background-clip: text; /* Pour assurer une meilleure compatibilité avec Safari */
+  -webkit-background-clip: text;
   font-style: italic;
 }
 
 .details-btn {
-  /* Style pour le bouton. Ajustez selon vos préférences */
   background-color: #6355c0;
   color: white;
   border: none;
@@ -521,7 +520,6 @@ nav a.active {
 }
 
 .left-section .enlarged-service-logo {
-  /* styles précédents pour .enlarged-service-logo... */
   animation: spinAndGrow 3s forwards;
 }
 
@@ -541,15 +539,15 @@ nav a.active {
   gap: 10px;
   padding: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-decoration: none;  /* Enlève le soulignement du lien */
-  color: inherit;         /* Garde les couleurs du texte standard */
-  cursor: pointer;        /* Indique qu'il s'agit d'un élément cliquable */
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s;
 }
 
 .service:hover {
-  background-color: #ffffff; /* change la couleur de fond lorsque survolé */
+  background-color: #ffffff;
 }
 
 .service.active {
@@ -558,19 +556,19 @@ nav a.active {
 }
 
 .service-logo {
-  width: 60px; /* Ajustez selon la taille de votre logo */
+  width: 60px;
   height: 60px;
-  object-fit: cover; /* Ajuste l'image à l'intérieur du conteneur tout en conservant son aspect */
+  object-fit: cover;
 }
 
 .service h3, .service p {
-  margin: 0; /* Retire les marges par défaut pour une meilleure apparence */
-  display: block; /* Assure que l'élément occupe toute la largeur disponible et passe à la ligne */
+  margin: 0;
+  display: block;
 }
 
 .service h3 {
   padding-top: 10px;
-  margin-bottom: 10px; /* Ajustez cette valeur selon vos besoins */
+  margin-bottom: 10px;
 }
 
 .service-text {
@@ -579,13 +577,13 @@ nav a.active {
 }
 
 .goto-service-btn {
-  display: none; /* Caché par défaut */
-  margin-left: auto; /* Pour le pousser à droite */
+  display: none;
+  margin-left: auto;
   margin-right: -220px;
   padding: 10px 15px;
   font-size: 14px;
-  background-color: #6355c0; /* Couleur de fond de votre choix */
-  color: white; /* Couleur du texte de votre choix */
+  background-color: #6355c0;
+  color: white;
   border: none;
   border-radius: 3px;
   cursor: pointer;
@@ -597,5 +595,5 @@ nav a.active {
 }
 
 .service.active .goto-service-btn {
-  display: block; /* Montré lorsque .service est actif */
+  display: block;
 }
