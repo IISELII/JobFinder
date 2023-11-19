@@ -7,8 +7,13 @@ body, h1, h2, h3, p {
   h1, h2, h3, h4, h5, h6 {
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
+
+  h1 {
+    font-size: 30px;
+  }
   
   p {
+    font-size: 20px;
     font-family: Helvetica;
     color: #838383;
     word-spacing: 4px;
@@ -101,3 +106,199 @@ body, h1, h2, h3, p {
   .create-account-btn:hover {
     background-color: #E6E6FA80;
   }
+
+  /* ****************************** section Job Finder ****************************** */
+
+.questionnaire-section {
+  height: 100vh;
+  padding: 0px;
+  background-color: #f8f8f8;
+}
+
+.progress-bar {
+    height: 20px;
+    width: 0%;
+    background-color: #6355c0;
+    margin-bottom: 20px;
+    border-radius: 20px;  
+    position: fixed;
+}
+
+.questionnaire-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%; /* Utilisez toute la hauteur de .questionnaire-section */
+    padding: 0 20px; 
+}
+
+.questionnaire-left-panel-2 > .title-and-texte-introduction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Centrer horizontalement et verticalement les éléments de cette div enfant */
+}
+
+.title-and-texte-introduction {
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+label {
+  margin-top: 20px;
+  }
+  
+input[type="text"],
+input[type="text"] {
+width: 97%;
+height: 20px;
+padding: 10px;
+margin-top: 5px;
+border-radius: 8px;
+border: 1px solid #ccc;
+}
+
+.questionnaire-left-panel input[type="text"] {
+  margin-bottom: 20px;
+}
+
+.questionnaire-left-panel input[type="text"] {
+  margin-bottom: 20px;
+}
+
+.button-suivant {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.questionnaire-left-panel, .questionnaire-right-panel {
+  width: 50%;
+  padding: 10px;
+}
+
+/* .questionnaire-left-panel {
+    /* Styles supplémentaires pour la partie gauche si nécessaire #E6E6FA80
+} */
+
+.questionnaire-left-panel {
+  width: 50%;
+  display: flex;
+  justify-content: center; /* Centrer horizontalement .questionnaire-left-panel-2 */
+  align-items: center; /* Centrer verticalement .questionnaire-left-panel-2 */
+  /* padding: 10px 20px;  */
+}
+
+.questionnaire-left-panel-2 {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding: 55px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.predictions {
+  display: none; /* initialement cachée, sera affichée via JavaScript */
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-align: left;
+  margin: 20px;
+}
+
+.predictions > div {
+  margin-bottom: 20px; 
+}
+
+/* Optionnel : supprimer la marge de la dernière div pour éviter un espace supplémentaire en bas */
+.predictions > div:last-child {
+  margin-bottom: 0;
+}
+
+.div-predictions {
+  border: 2px solid #6355c0;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.div-predictions > div {
+  margin-bottom: 10px; 
+}
+
+.predictions > div:last-child {
+  margin-bottom: 0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Pour aligner les boutons à gauche et à droite */
+}
+
+.button-retake button, .button-next-predition button {
+  font-size: 15px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #6355c0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button-retake button:hover, .button-next-predition button:hover {
+  background-color: rgb(52, 1, 73);
+}
+
+.questionnaire-right-panel {
+    background-color: #f8f8f8;
+    text-align: center;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+}
+
+.questionnaire-right-panel img {
+  max-height: 80%;
+  max-width: 80%;
+}
+
+#nextButton {
+  font-size: 15px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #6355c0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#nextButton:hover {
+  background-color: rgb(52, 1, 73);
+}
+
+/* Effet Fade-Out */
+
+.fade-out {
+  animation: fadeOut 0.5s;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

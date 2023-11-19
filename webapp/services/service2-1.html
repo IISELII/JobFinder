@@ -27,11 +27,69 @@
       </nav>
     </header>
 
+    <section class="questionnaire-section">
+        <div class="progress-bar" id="progressBar"></div>
+        <div class="questionnaire-container">
+            <div class="questionnaire-left-panel" id="leftPanel">
+                <div class="questionnaire-left-panel-2">
+                    <div class="title-and-texte-introduction">
+                        <h1 id="questionnaireTitle">Take 5 min to answer to us</h1>
+                        <p id="questionnaireDescription">We need to know more about you</p>
+                    </div>
+                    
+                    <div class="question">
+                        <label for="question1" id="labelQuestion1">Quels sont vos diplômes ?</label>
+                        <input type="text" id="question1" placeholder="Enter your answer">
+                    </div>
+    
+                    <div class="question">
+                        <label for="question2" id="labelQuestion2">Quels sont vos compétences ?</label>
+                        <input type="text" id="question2" placeholder="Enter your answer">
+                    </div>
+                    
+                    <div class="button-suivant">
+                        <button id="nextButton">NEXT</button>
+                    </div>
+                </div> 
 
-    <section>
-        <!-- Ajoutez ici vos visualisations (ex: graphiques, cartes, etc.) -->
+                <div class="predictions" style="display: none;">
+                    <div class="div-title-1">
+                        <h1>PREDICTIONS</h1>
+                    </div>
+                    <div class="div-predictions">
+                        <div class="div-job-prediction">
+                            <!-- La prédiction du job -->
+                            <p>Data Analyste est un job fait pour vous !</p>
+                        </div>
+                        <div class="div-description-job">
+                            <!-- Description du job -->
+                            <p>Le/la data analyst valorise l’ensemble des données d’une entreprise pour en faire un levier de création de valeur. Il/elle utilise notamment les données recueillies en masse (big data) pour réaliser les nombreux tableaux de bord nécessaires à différents services de l’entreprise (marketing, relations clients, production…). Il/elle est également en charge de construire des modèles statistiques pour éclairer les services opérationnels (segmentations clients ou analyses prédictives).</p>
+                        </div>
+                    </div>
+                    <div class="div-link-to-job-offer">
+                        <!-- Lien vers l'offre d'emploi -->
+                        <p>Link</p>
+                    </div>
+                    <div class="button-container">
+                        <div class="button-retake">
+                            <button id="retakeButton">RETAKE TEST</button>
+                        </div>
+                        <div class="button-next-predition">
+                            <button id="nextprediction">NEW JOB</button>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+            
+            <div class="questionnaire-right-panel" id="rightPanel">
+                <img src="../images/chat-image.png" alt="Image 1" />
+            </div>
+        </div>
     </section>
+    
 
-    <script src="main.js"></script>
+    <script src="service2-1.js"></script>
 </body>
 </html>

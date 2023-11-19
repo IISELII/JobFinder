@@ -46,7 +46,7 @@ def display_page(pathname):
     elif pathname == '/pages/predictions':
         return predictions_page_layout  
     else:
-        return "404 Page Not Found" 
+        return main_page_layout
 
 if __name__ == '__main__':
     app.run(debug=True)
