@@ -116,11 +116,10 @@ body, h1, h2, h3, p {
 }
 
 .progress-bar {
-    height: 20px;
+    height: 10px;
     width: 0%;
     background-color: #6355c0;
-    margin-bottom: 20px;
-    border-radius: 20px;  
+    margin-bottom: 20px;  
     position: fixed;
 }
 
@@ -233,9 +232,14 @@ border: 1px solid #ccc;
   margin-bottom: 0;
 }
 
+.job-prediction {
+  color: rgb(88, 88, 88);
+  font-weight: bold;
+}
+
 .button-container {
   display: flex;
-  justify-content: space-between; /* Pour aligner les boutons à gauche et à droite */
+  justify-content: space-between; 
 }
 
 .button-retake button, .button-next-predition button {

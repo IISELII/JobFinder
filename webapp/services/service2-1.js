@@ -1,51 +1,125 @@
 document.getElementById('nextButton').addEventListener('click', function() {
-    // Update progress bar
-    let progressBar = document.getElementById('progressBar');
-    let currentWidth = parseInt(progressBar.style.width, 10);
-    progressBar.style.width = (currentWidth + 25) + '%';
 
-    // Change content with an effect
+    let progressBar = document.getElementById('progressBar');
+    let totalSteps = content.length;
+    let progressPercentage = ((currentStep + 1) / totalSteps) * 100 -25; 
+    progressBar.style.width = progressPercentage + '%';
+
+    
+
     changeContent();
+});
+
+// Ajouter un gestionnaire d'événements pour le bouton "RETAKE TEST"
+document.getElementById('retakeButton').addEventListener('click', function() {
+
+    currentStep = 0;
+
+    let progressBar = document.getElementById('progressBar');
+    progressBar.style.width = '0%';
+
+    let panel = document.querySelector('.questionnaire-left-panel-2');
+    panel.style.display = 'flex'; 
+    resetContent();
+
+    let predictionsDiv = document.querySelector('.predictions');
+    predictionsDiv.style.display = 'none';
 });
 
 let currentStep = 0;
 let content = [
-    { title: "Take 5 min to answer to us", description: "We need to know more about you", question1: "Question 1", question2: "Question 2" },
-    { title: "Take 5 min to answer to us", description: "We need to know more about you", question1: "Question 3", question2: "Question 4" },
-    { title: "Take 5 min to answer to us", description: "We need to know more about you", question1: "Question 5", question2: "Question 6" },
-    { title: "Take 5 min to answer to us", description: "We need to know more about you", question1: "Question 7", question2: "Question 8" },
-    // Add more steps as needed
+    { title: "Take 5 min to answer us", description: "We need to know more about you", question1: "Quels tâches aimerais-tu faire dans un job ?"},
+    { title: "Take 5 min to answer us", description: "We need to know more about you", question1: "Qualités", question2: "Diplômes ?" },
+    { title: "Take 5 min to answer us", description: "We need to know more about you", question1: "Expériences", question2: "Compétences techniques ?" },
 ];
+
+let progressBar = document.getElementById('progressBar');
+progressBar.style.width = '0%';
+
 
 function changeContent() {
     let panel = document.querySelector('.questionnaire-left-panel-2');
+    let questionsContainer = document.querySelector('.questions-container');
     let predictionsDiv = document.querySelector('.predictions');
 
     if (currentStep < content.length) {
-        // Supprimer la classe 'fade-in' avant d'ajouter 'fade-out'
         panel.classList.remove('fade-in');
         panel.classList.add('fade-out');
-        
-        // Attendre la fin de l'effet de fondu avant de changer le contenu
+
         setTimeout(() => {
             document.getElementById('questionnaireTitle').textContent = content[currentStep].title;
             document.getElementById('questionnaireDescription').textContent = content[currentStep].description;
-            document.getElementById('labelQuestion1').textContent = content[currentStep].question1;
-            document.getElementById('labelQuestion2').textContent = content[currentStep].question2;
 
-            // Supprimer la classe 'fade-out' et ajouter 'fade-in'
+            // Nettoyer les champs précédents
+            questionsContainer.innerHTML = '';
+
+            // Créer de nouveaux champs de saisie pour chaque question
+            Object.keys(content[currentStep]).forEach(key => {
+                if (key.startsWith('question')) {
+                    let questionDiv = document.createElement('div');
+                    questionDiv.className = 'question';
+
+                    let label = document.createElement('label');
+                    label.htmlFor = key;
+                    label.textContent = content[currentStep][key];
+
+                    let input = document.createElement('input');
+                    input.type = 'text';
+                    input.id = key;
+                    input.placeholder = 'Enter your answer';
+
+                    questionDiv.appendChild(label);
+                    questionDiv.appendChild(input);
+                    questionsContainer.appendChild(questionDiv);
+                }
+            });
+
             panel.classList.remove('fade-out');
             panel.classList.add('fade-in');
             currentStep++;
-        }, 500); // Ajuster ce temps en fonction de la durée de votre effet de fondu
+
+        }, 500); 
     } else {
-        // Afficher les prédictions
         panel.classList.add('fade-out');
         setTimeout(() => {
-            panel.style.display = 'none'; // Masquer le panneau de questions
-            predictionsDiv.style.display = 'block'; // Afficher le panneau de prédictions
+            panel.style.display = 'none'; 
+            predictionsDiv.style.display = 'block'; 
             predictionsDiv.classList.remove('fade-out');
-            predictionsDiv.classList.add('fade-in'); // Appliquer l'effet de fondu en entrée
+            predictionsDiv.classList.add('fade-in'); 
         }, 500);
     }
 }
+
+function sendToAPI() {
+    fetch('/predict', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userResponses),
+    })
+    .then(response => response.json())
+    .then(data => {
+        updatePredictions(data.prediction);
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+}
+
+function updatePredictions(predictions) {
+    let predictionDiv = document.querySelector('.job-prediction');
+    predictionDiv.textContent = predictions[0]; 
+}
+
+// Fonction pour réinitialiser le contenu du questionnaire
+function resetContent() {
+    document.getElementById('questionnaireTitle').textContent = content[0].title;
+    document.getElementById('questionnaireDescription').textContent = content[0].description;
+
+    changeContent();
+}
+
+
+// On appelle changeContent pour charger la première question
+changeContent();
